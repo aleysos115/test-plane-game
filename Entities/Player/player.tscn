@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://d0f0vm8vos6yr"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_5hio4"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_ix6vc"]
+
+[node name="Player" type="RigidBody3D" unique_id=1291169069]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=836280751]
+mesh = SubResource("CapsuleMesh_5hio4")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=925914646]
+shape = SubResource("CapsuleShape3D_ix6vc")
+
+[node name="CameraPoint" type="RemoteTransform3D" parent="." unique_id=508499151]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.75, 0)
+update_rotation = false
+update_scale = false
