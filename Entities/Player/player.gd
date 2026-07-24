@@ -31,6 +31,17 @@ func _unhandled_input(event: InputEvent) -> void:
 		look_dir = event.relative * 0.001
 		if mouse_captured: _rotate_camera()
 	if Input.is_action_just_pressed(&"exit"): get_tree().quit()
+	if Input.is_action_just_pressed(&"interact"):
+		var space_state = get_world_3d().direct_space_state
+		var mousepos = get_viewport().get_mouse_position()
+
+		var origin = camera_root.project_ray_origin(mousepos)
+		var end = origin + camera_root.project_ray_normal(mousepos) * 100
+		var query = PhysicsRayQueryParameters3D.create(origin, end)
+		query.exclude = [self]
+		query.collide_with_areas = true
+
+		var result = space_state.intersect_ray(query)
 
 func _physics_process(delta: float) -> void:
 	if Input.is_action_just_pressed(&"jump"): jumping = true

@@ -1,5 +1,7 @@
 [gd_scene format=3 uid="uid://dlmww6ttqpoh2"]
 
+[ext_resource type="PackedScene" uid="uid://bf2uq5coarltb" path="res://Entities/Fighter/fighter.tscn" id="1_4hvuo"]
+
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_4hvuo"]
 
 [sub_resource type="Sky" id="Sky_236rp"]
@@ -42,3 +44,6 @@ shape = SubResource("BoxShape3D_6015k")
 
 [node name="PlayerSpawn" type="Node3D" parent="." unique_id=994354051]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.292, 2, 0)
+
+[node name="Fighter" parent="." unique_id=923092705 instance=ExtResource("1_4hvuo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.823045, -19.342628)

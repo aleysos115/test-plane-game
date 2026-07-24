@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://bf2uq5coarltb"]
+
+[ext_resource type="PackedScene" uid="uid://bmo58cxhkd7wg" path="res://Entities/Fighter/TestPlanePlaneGame.blend" id="1_112yv"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_kgvwh"]
+size = Vector3(3.4995728, 3.8868408, 17.557251)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_qvcwi"]
+size = Vector3(2.3796387, 1.8681641, 13.575195)
+
+[node name="Fighter" type="RigidBody3D" unique_id=923092705]
+mass = 1500.0
+
+[node name="TestPlanePlaneGame" parent="." unique_id=1250002581 instance=ExtResource("1_112yv")]
+
+[node name="Body" type="CollisionShape3D" parent="." unique_id=694974701]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.003499031, 0.614182, -1.9381742)
+shape = SubResource("BoxShape3D_kgvwh")
+
+[node name="RightPontoon" type="CollisionShape3D" parent="." unique_id=1353547427]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, -3.5, 2.75)
+shape = SubResource("BoxShape3D_qvcwi")
+
+[node name="LeftPontoon" type="CollisionShape3D" parent="." unique_id=171692995]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, -3.5, 2.75)
+shape = SubResource("BoxShape3D_qvcwi")
