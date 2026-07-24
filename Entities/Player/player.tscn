@@ -1,10 +1,14 @@
 [gd_scene format=3 uid="uid://d0f0vm8vos6yr"]
 
+[ext_resource type="Script" uid="uid://b558h0dmmgiai" path="res://Entities/Player/player.gd" id="1_mv1ah"]
+
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_5hio4"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_ix6vc"]
 
-[node name="Player" type="RigidBody3D" unique_id=1291169069]
+[node name="Player" type="CharacterBody3D" unique_id=1171736633 node_paths=PackedStringArray("camera_point")]
+script = ExtResource("1_mv1ah")
+camera_point = NodePath("CameraPoint")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=836280751]
 mesh = SubResource("CapsuleMesh_5hio4")
@@ -12,7 +16,5 @@ mesh = SubResource("CapsuleMesh_5hio4")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=925914646]
 shape = SubResource("CapsuleShape3D_ix6vc")
 
-[node name="CameraPoint" type="RemoteTransform3D" parent="." unique_id=508499151]
+[node name="CameraPoint" type="Node3D" parent="." unique_id=154092004]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.75, 0)
-update_rotation = false
-update_scale = false

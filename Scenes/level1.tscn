@@ -1,9 +1,5 @@
 [gd_scene format=3 uid="uid://dlmww6ttqpoh2"]
 
-[sub_resource type="BoxMesh" id="BoxMesh_5hio4"]
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_6015k"]
-
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_4hvuo"]
 
 [sub_resource type="Sky" id="Sky_236rp"]
@@ -19,7 +15,19 @@ reflected_light_source = 2
 
 [sub_resource type="Compositor" id="Compositor_5qthr"]
 
+[sub_resource type="BoxMesh" id="BoxMesh_5hio4"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_6015k"]
+
 [node name="Level1" type="Node3D" unique_id=1452233346]
+
+[node name="Sun" type="DirectionalLight3D" parent="." unique_id=1186919908]
+transform = Transform3D(1, 0, 0, 0, 0.96316254, 0.26891983, 0, -0.26891983, 0.96316254, 0, 0, 0)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=205032529]
+environment = SubResource("Environment_lgns8")
+camera_attributes = SubResource("CameraAttributesPractical_5hio4")
+compositor = SubResource("Compositor_5qthr")
 
 [node name="Floor" type="Node3D" parent="." unique_id=720359303]
 
@@ -32,10 +40,5 @@ mesh = SubResource("BoxMesh_5hio4")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Floor/Mesh/StaticBody3D" unique_id=1473431916]
 shape = SubResource("BoxShape3D_6015k")
 
-[node name="Sun" type="DirectionalLight3D" parent="." unique_id=1186919908]
-transform = Transform3D(1, 0, 0, 0, 0.96316254, 0.26891983, 0, -0.26891983, 0.96316254, 0, 0, 0)
-
-[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=205032529]
-environment = SubResource("Environment_lgns8")
-camera_attributes = SubResource("CameraAttributesPractical_5hio4")
-compositor = SubResource("Compositor_5qthr")
+[node name="PlayerSpawn" type="Node3D" parent="." unique_id=994354051]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.292, 2, 0)
