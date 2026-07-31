@@ -18,8 +18,10 @@ reflected_light_source = 2
 [sub_resource type="Compositor" id="Compositor_5qthr"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_5hio4"]
+size = Vector3(1, 1, 10.473755)
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_6015k"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_4hvuo"]
+size = Vector3(1, 1, 10.473755)
 
 [node name="Level1" type="Node3D" unique_id=1452233346]
 
@@ -34,16 +36,19 @@ compositor = SubResource("Compositor_5qthr")
 [node name="Floor" type="Node3D" parent="." unique_id=720359303]
 
 [node name="Mesh" type="MeshInstance3D" parent="Floor" unique_id=327873911]
-transform = Transform3D(50, 0, 0, 0, 1, 0, 0, 0, 50, 0, 0, 0)
+transform = Transform3D(50, 0, 0, 0, 1, 0, 0, 0, 50, 0, 0, 236.84387)
 mesh = SubResource("BoxMesh_5hio4")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Floor/Mesh" unique_id=398812618]
+[node name="StaticBody3D" type="StaticBody3D" parent="Floor/Mesh" unique_id=795535152]
+collision_layer = 3
+collision_mask = 3
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Floor/Mesh/StaticBody3D" unique_id=1473431916]
-shape = SubResource("BoxShape3D_6015k")
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Floor/Mesh/StaticBody3D" unique_id=1005304892]
+shape = SubResource("BoxShape3D_4hvuo")
 
 [node name="PlayerSpawn" type="Node3D" parent="." unique_id=994354051]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.292, 2, 0)
 
 [node name="Fighter" parent="." unique_id=923092705 instance=ExtResource("1_4hvuo")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.823045, -19.342628)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.823045, -14.772864)
+max_throttle = 20000.0
