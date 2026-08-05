@@ -1,0 +1,89 @@
+[gd_scene format=3 uid="uid://duqvqi7bcjk6v"]
+
+[ext_resource type="PackedScene" uid="uid://dv4epciwtm84o" path="res://Assets/Bomber/PrototypeBomber/SquareBomber-PrototypeExterior.fbx" id="1_8yx04"]
+[ext_resource type="Texture2D" uid="uid://c0b1k0daicpc4" path="res://Assets/Bomber/PrototypeBomber/TestBomberTextureSet/SquareBomber-PrototypeExterior_DefaultMaterial_Albedo.png" id="2_5scqm"]
+[ext_resource type="Texture2D" uid="uid://dwvh2jpdt6jip" path="res://Assets/Bomber/PrototypeBomber/TestBomberTextureSet/SquareBomber-PrototypeExterior_DefaultMaterial_AO.png" id="3_o5pg1"]
+[ext_resource type="Texture2D" uid="uid://cyu0hyih52jkc" path="res://Assets/Bomber/PrototypeBomber/TestBomberTextureSet/SquareBomber-PrototypeExterior_DefaultMaterial_Metallic.png" id="4_b1wj7"]
+[ext_resource type="Texture2D" uid="uid://dpinxfxfow7cn" path="res://Assets/Bomber/PrototypeBomber/TestBomberTextureSet/SquareBomber-PrototypeExterior_DefaultMaterial_Normal.png" id="5_vu1lr"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_82rge"]
+cull_mode = 2
+albedo_texture = ExtResource("2_5scqm")
+metallic = 1.0
+metallic_texture = ExtResource("4_b1wj7")
+normal_enabled = true
+normal_texture = ExtResource("5_vu1lr")
+ao_enabled = true
+ao_texture = ExtResource("3_o5pg1")
+
+[node name="Bomber" type="Node3D" unique_id=697313501]
+
+[node name="SquareBomber-PrototypeExterior" parent="." unique_id=309186235 instance=ExtResource("1_8yx04")]
+
+[node name="BackWheel" parent="SquareBomber-PrototypeExterior" index="0" unique_id=354357536]
+surface_material_override/0 = SubResource("StandardMaterial3D_82rge")
+
+[node name="Fuselage" parent="SquareBomber-PrototypeExterior" index="1" unique_id=896828695]
+surface_material_override/0 = SubResource("StandardMaterial3D_82rge")
+
+[node name="HorizontalStabilizer" parent="SquareBomber-PrototypeExterior" index="2" unique_id=1786104150]
+surface_material_override/0 = SubResource("StandardMaterial3D_82rge")
+
+[node name="LeftAileron" parent="SquareBomber-PrototypeExterior" index="3" unique_id=979683166]
+surface_material_override/0 = SubResource("StandardMaterial3D_82rge")
+
+[node name="LeftElevator" parent="SquareBomber-PrototypeExterior" index="4" unique_id=782351075]
+surface_material_override/0 = SubResource("StandardMaterial3D_82rge")
+
+[node name="LeftEngineOne" parent="SquareBomber-PrototypeExterior" index="5" unique_id=332408181]
+surface_material_override/0 = SubResource("StandardMaterial3D_82rge")
+
+[node name="LeftEngineTwo" parent="SquareBomber-PrototypeExterior" index="6" unique_id=879461142]
+surface_material_override/0 = SubResource("StandardMaterial3D_82rge")
+
+[node name="LeftFlap" parent="SquareBomber-PrototypeExterior" index="7" unique_id=1453928764]
+surface_material_override/0 = SubResource("StandardMaterial3D_82rge")
+
+[node name="LeftPropOne" parent="SquareBomber-PrototypeExterior" index="8" unique_id=1850683541]
+surface_material_override/0 = SubResource("StandardMaterial3D_82rge")
+
+[node name="LeftPropTwo" parent="SquareBomber-PrototypeExterior" index="9" unique_id=750057680]
+surface_material_override/0 = SubResource("StandardMaterial3D_82rge")
+
+[node name="LeftWheel" parent="SquareBomber-PrototypeExterior" index="10" unique_id=969580736]
+surface_material_override/0 = SubResource("StandardMaterial3D_82rge")
+
+[node name="LeftWing" parent="SquareBomber-PrototypeExterior" index="11" unique_id=24548444]
+surface_material_override/0 = SubResource("StandardMaterial3D_82rge")
+
+[node name="RightAileron" parent="SquareBomber-PrototypeExterior" index="12" unique_id=1448489783]
+surface_material_override/0 = SubResource("StandardMaterial3D_82rge")
+
+[node name="RightElevator" parent="SquareBomber-PrototypeExterior" index="13" unique_id=508542367]
+surface_material_override/0 = SubResource("StandardMaterial3D_82rge")
+
+[node name="RightEngineOne" parent="SquareBomber-PrototypeExterior" index="14" unique_id=1177688079]
+surface_material_override/0 = SubResource("StandardMaterial3D_82rge")
+
+[node name="RightEngineTwo" parent="SquareBomber-PrototypeExterior" index="15" unique_id=110303832]
+surface_material_override/0 = SubResource("StandardMaterial3D_82rge")
+
+[node name="RightFlap" parent="SquareBomber-PrototypeExterior" index="16" unique_id=170596716]
+surface_material_override/0 = SubResource("StandardMaterial3D_82rge")
+
+[node name="RightPropOne" parent="SquareBomber-PrototypeExterior" index="17" unique_id=1418802858]
+surface_material_override/0 = SubResource("StandardMaterial3D_82rge")
+
+[node name="RightPropTwo" parent="SquareBomber-PrototypeExterior" index="18" unique_id=6692940]
+surface_material_override/0 = SubResource("StandardMaterial3D_82rge")
+
+[node name="RightWheel" parent="SquareBomber-PrototypeExterior" index="19" unique_id=1621455878]
+surface_material_override/0 = SubResource("StandardMaterial3D_82rge")
+
+[node name="RightWing" parent="SquareBomber-PrototypeExterior" index="20" unique_id=1709390624]
+surface_material_override/0 = SubResource("StandardMaterial3D_82rge")
+
+[node name="Rudder" parent="SquareBomber-PrototypeExterior" index="21" unique_id=169740310]
+surface_material_override/0 = SubResource("StandardMaterial3D_82rge")
+
+[editable path="SquareBomber-PrototypeExterior"]

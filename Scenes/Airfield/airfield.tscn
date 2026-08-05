@@ -1,0 +1,55 @@
+[gd_scene format=3 uid="uid://r0gdr3jxw4cx"]
+
+[ext_resource type="PackedScene" uid="uid://bvk854vrn285c" path="res://Assets/Sunset_Squadron_Main_Base.blend" id="1_8aq2u"]
+[ext_resource type="PackedScene" uid="uid://duqvqi7bcjk6v" path="res://Assets/Bomber/bomber.tscn" id="2_wqk30"]
+[ext_resource type="PackedScene" uid="uid://bf2uq5coarltb" path="res://Entities/Fighter/fighter.tscn" id="3_wqk30"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_8aq2u"]
+
+[sub_resource type="Sky" id="Sky_236rp"]
+sky_material = SubResource("ProceduralSkyMaterial_8aq2u")
+
+[sub_resource type="Environment" id="Environment_wqk30"]
+background_mode = 2
+sky = SubResource("Sky_236rp")
+ambient_light_source = 3
+reflected_light_source = 2
+
+[sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_8iu42"]
+
+[sub_resource type="Compositor" id="Compositor_lj5n8"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_pk3r5"]
+size = Vector3(1816.773, 20, 3548.028)
+
+[node name="Airfield" type="Node3D" unique_id=484084949]
+
+[node name="Sun" type="DirectionalLight3D" parent="." unique_id=1129442193]
+transform = Transform3D(0.7270768, -0.67502904, 0.12528054, 0.086886734, 0.27147955, 0.95851433, -0.681036, -0.6860283, 0.25603753, 0, 0, 0)
+shadow_enabled = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=207576177]
+environment = SubResource("Environment_wqk30")
+camera_attributes = SubResource("CameraAttributesPractical_8iu42")
+compositor = SubResource("Compositor_lj5n8")
+
+[node name="Sunset_Squadron_Main_Base" parent="." unique_id=1660169322 instance=ExtResource("1_8aq2u")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.012622833, -0.074502945)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Sunset_Squadron_Main_Base" unique_id=1664032076]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.4, 0)
+collision_layer = 4294967295
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Sunset_Squadron_Main_Base/StaticBody3D" unique_id=625331637]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -9.845067, 0)
+shape = SubResource("BoxShape3D_pk3r5")
+
+[node name="PlayerSpawn" type="Node3D" parent="." unique_id=488450523]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.292, 2.247841, 0)
+
+[node name="Bomber" parent="." unique_id=697313501 instance=ExtResource("2_wqk30")]
+transform = Transform3D(0, 0.25327367, -1.9838985, 0, 1.9838983, 0.25327376, 2.0000002, 0, 0, 24, 3.8767786, 53)
+
+[node name="Fighter" parent="." unique_id=2066637338 instance=ExtResource("3_wqk30")]
+transform = Transform3D(0.9803615, 0, -0.19720891, 0, 1, 0, 0.19720891, 0, 0.9803615, -25.152908, 2.43686, -78.365585)
+max_throttle = 20000.0
