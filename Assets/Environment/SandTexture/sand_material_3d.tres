@@ -1,0 +1,18 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://delsed06nlwcq"]
+
+[ext_resource type="Texture2D" uid="uid://dgiuywlsbpjk1" path="res://Assets/Environment/SandTexture/sand_01_color_2k.png" id="1_3u1rk"]
+[ext_resource type="Texture2D" uid="uid://sil01qvmh3qt" path="res://Assets/Environment/SandTexture/sand_01_ambient_occlusion_2k.png" id="2_3bw4c"]
+[ext_resource type="Texture2D" uid="uid://c6e5d23i4kcul" path="res://Assets/Environment/SandTexture/sand_01_height_2k.png" id="3_maso1"]
+[ext_resource type="Texture2D" uid="uid://b3icyyn06uk2p" path="res://Assets/Environment/SandTexture/sand_01_normal_gl_2k.png" id="4_5glyx"]
+[ext_resource type="Texture2D" uid="uid://cdjrtj5ns401h" path="res://Assets/Environment/SandTexture/sand_01_roughness_2k.png" id="5_mtja2"]
+
+[resource]
+albedo_texture = ExtResource("1_3u1rk")
+roughness_texture = ExtResource("5_mtja2")
+normal_enabled = true
+normal_texture = ExtResource("4_5glyx")
+ao_enabled = true
+ao_texture = ExtResource("2_3bw4c")
+heightmap_enabled = true
+heightmap_texture = ExtResource("3_maso1")
+uv1_scale = Vector3(1000, 1000, 1000)
