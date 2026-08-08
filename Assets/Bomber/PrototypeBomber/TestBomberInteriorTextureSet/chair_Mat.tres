@@ -1,0 +1,15 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://c1gx4qtnuwsng"]
+
+[ext_resource type="Texture2D" uid="uid://bkxff8o26ind0" path="res://Assets/Bomber/PrototypeBomber/TestBomberInteriorTextureSet/Prototype Bomber - Test Interior_ChairMaterial_Albedo.png" id="1_gshxu"]
+[ext_resource type="Texture2D" uid="uid://bg7i5nab3y0om" path="res://Assets/Bomber/PrototypeBomber/TestBomberInteriorTextureSet/Prototype Bomber - Test Interior_ChairMaterial_AO.png" id="2_2mydw"]
+[ext_resource type="Texture2D" uid="uid://bwuutvlgretfb" path="res://Assets/Bomber/PrototypeBomber/TestBomberInteriorTextureSet/Prototype Bomber - Test Interior_ChairMaterial_Metallic.png" id="3_leodu"]
+[ext_resource type="Texture2D" uid="uid://cjbqmcybs0v3w" path="res://Assets/Bomber/PrototypeBomber/TestBomberInteriorTextureSet/Prototype Bomber - Test Interior_ChairMaterial_Normal.png" id="4_ri0lx"]
+
+[resource]
+albedo_texture = ExtResource("1_gshxu")
+metallic = 1.0
+metallic_texture = ExtResource("3_leodu")
+normal_enabled = true
+normal_texture = ExtResource("4_ri0lx")
+ao_enabled = true
+ao_texture = ExtResource("2_2mydw")

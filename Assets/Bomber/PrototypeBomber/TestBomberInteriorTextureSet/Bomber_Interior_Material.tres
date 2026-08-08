@@ -1,0 +1,20 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://jkqr35ugssge"]
+
+[ext_resource type="Texture2D" uid="uid://bdc2ecyicye13" path="res://Assets/Bomber/PrototypeBomber/TestBomberInteriorTextureSet/Prototype Bomber - Test Interior_PlaneMaterial_Albedo.png" id="1_4dne7"]
+[ext_resource type="Texture2D" uid="uid://btqf7lus5n28b" path="res://Assets/Bomber/PrototypeBomber/TestBomberInteriorTextureSet/Prototype Bomber - Test Interior_PlaneMaterial_AO.png" id="2_5crfv"]
+[ext_resource type="Texture2D" uid="uid://b81ufg0dmqg3e" path="res://Assets/Bomber/PrototypeBomber/TestBomberInteriorTextureSet/Prototype Bomber - Test Interior_PlaneMaterial_Height.png" id="3_qev1w"]
+[ext_resource type="Texture2D" uid="uid://baqsqncjv1l3q" path="res://Assets/Bomber/PrototypeBomber/TestBomberInteriorTextureSet/Prototype Bomber - Test Interior_PlaneMaterial_Metallic.png" id="4_el7rt"]
+[ext_resource type="Texture2D" uid="uid://dwfptutf4ybde" path="res://Assets/Bomber/PrototypeBomber/TestBomberInteriorTextureSet/Prototype Bomber - Test Interior_PlaneMaterial_Normal.png" id="5_0lt3y"]
+
+[resource]
+albedo_texture = ExtResource("1_4dne7")
+metallic = 1.0
+metallic_texture = ExtResource("4_el7rt")
+roughness = 0.5
+normal_enabled = true
+normal_texture = ExtResource("5_0lt3y")
+ao_texture = ExtResource("2_5crfv")
+ao_texture_channel = 4
+heightmap_enabled = true
+heightmap_scale = 0.005
+heightmap_texture = ExtResource("3_qev1w")

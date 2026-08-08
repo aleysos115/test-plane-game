@@ -5,6 +5,9 @@
 [ext_resource type="Texture2D" uid="uid://dwvh2jpdt6jip" path="res://Assets/Bomber/PrototypeBomber/TestBomberTextureSet/SquareBomber-PrototypeExterior_DefaultMaterial_AO.png" id="3_o5pg1"]
 [ext_resource type="Texture2D" uid="uid://cyu0hyih52jkc" path="res://Assets/Bomber/PrototypeBomber/TestBomberTextureSet/SquareBomber-PrototypeExterior_DefaultMaterial_Metallic.png" id="4_b1wj7"]
 [ext_resource type="Texture2D" uid="uid://dpinxfxfow7cn" path="res://Assets/Bomber/PrototypeBomber/TestBomberTextureSet/SquareBomber-PrototypeExterior_DefaultMaterial_Normal.png" id="5_vu1lr"]
+[ext_resource type="PackedScene" uid="uid://bp42rf4x5ihjc" path="res://Assets/Bomber/PrototypeBomber/Prototype Bomber - Test Interior.fbx" id="6_o5pg1"]
+[ext_resource type="Material" uid="uid://jkqr35ugssge" path="res://Assets/Bomber/PrototypeBomber/TestBomberInteriorTextureSet/Bomber_Interior_Material.tres" id="7_b1wj7"]
+[ext_resource type="Material" uid="uid://c1gx4qtnuwsng" path="res://Assets/Bomber/PrototypeBomber/TestBomberInteriorTextureSet/chair_Mat.tres" id="7_vu1lr"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_82rge"]
 cull_mode = 2
@@ -86,4 +89,13 @@ surface_material_override/0 = SubResource("StandardMaterial3D_82rge")
 [node name="Rudder" parent="SquareBomber-PrototypeExterior" index="21" unique_id=169740310]
 surface_material_override/0 = SubResource("StandardMaterial3D_82rge")
 
+[node name="Prototype Bomber - Test Interior" parent="." unique_id=2030829847 instance=ExtResource("6_o5pg1")]
+
+[node name="Chair" parent="Prototype Bomber - Test Interior" index="0" unique_id=523212269]
+material_override = ExtResource("7_vu1lr")
+
+[node name="Interior" parent="Prototype Bomber - Test Interior" index="1" unique_id=481694863]
+surface_material_override/0 = ExtResource("7_b1wj7")
+
 [editable path="SquareBomber-PrototypeExterior"]
+[editable path="Prototype Bomber - Test Interior"]
