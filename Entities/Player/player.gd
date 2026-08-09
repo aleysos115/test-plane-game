@@ -28,7 +28,8 @@ var is_seated: bool = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	_capture_mouse()
+	#_capture_mouse()
+	pass
 
 func _unhandled_input(event: InputEvent) -> void:
 	if event is InputEventMouseMotion:
