@@ -48,7 +48,7 @@ func _physics_process(delta: float) -> void:
 	_update_lift()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if not seated_player:
 		return
 	var move_dir: Vector2 = Input.get_vector(&"move_left", &"move_right", &"move_forward", &"move_backwards")
@@ -56,18 +56,18 @@ func _process(delta: float) -> void:
 	if throttle_input < 0: throttle_input = 0
 	flaps_deployed = true if move_dir.x != 0 else false
 
-func _on_interacted_with(player: Player):
+func _on_interacted_with(player: Player) -> void:
 	seated_player = player;
 	player.seat_player()
 	player_seat.remote_path = player_seat.get_path_to(player)
 
-func _calculate_state(delta: float) -> void:
+func _calculate_state(_delta: float) -> void:
 	var inverse_rotation: Basis = global_basis.inverse()
 	velocity = linear_velocity
 	local_velocity = inverse_rotation * velocity
 	local_angular_velocity = inverse_rotation * angular_velocity
 
-func _calculate_aoa(delta: float) -> void:
+func _calculate_aoa(_delta: float) -> void:
 	if local_velocity.length_squared() < 0.1:
 		aoa = 0
 		aoa_yaw = 0
@@ -75,6 +75,7 @@ func _calculate_aoa(delta: float) -> void:
 	
 	aoa = atan2(-local_velocity.y, local_velocity.z)
 	aoa_yaw = atan2(local_velocity.x, local_velocity.z)
+	return
 
 func _update_thrust() -> void:
 	apply_central_force(throttle_input * max_throttle * global_transform.basis.z)
@@ -83,14 +84,14 @@ func _update_drag() -> void:
 	var lv: Vector3 = local_velocity
 	var lv2: float = local_velocity.length_squared()
 	
-	var air_breaks = air_breaks_drag if air_breaks_deployed else 0
-	var flaps = flaps_drag if flaps_deployed else 0
+	var air_breaks: float = air_breaks_drag if air_breaks_deployed else 0.0
+	var flaps: float = flaps_drag if flaps_deployed else 0.0
 	
-	var coefficient = _scale_6(lv.normalized(), \
-	Vector2(drag_left.sample(abs(lv.x)), drag_right.sample(abs(lv.x))), \
-	Vector2(drag_up.sample(abs(lv.y)), drag_down.sample(abs(lv.y))), \
-	Vector2(drag_forward.sample(abs(lv.z)) + air_breaks + flaps, \
-	drag_back.sample(abs(lv.z))))
+	var coefficient: Vector3 = _scale_6(lv.normalized(), \
+	Vector2(drag_left.sample(absf(lv.x)), drag_right.sample(absf(lv.x))), \
+	Vector2(drag_up.sample(absf(lv.y)), drag_down.sample(absf(lv.y))), \
+	Vector2(drag_forward.sample(absf(lv.z)) + air_breaks + flaps, \
+	drag_back.sample(absf(lv.z))))
 	
 	var drag: Vector3 = coefficient.length() * lv2 * -lv.normalized()
 	apply_central_force(global_transform.basis * drag)
@@ -99,8 +100,8 @@ func _update_lift() -> void:
 	if local_velocity.length_squared() < 1:
 		return
 	
-	var flap_lift: float = flaps_lift_power if flaps_deployed else 0
-	var flaps_bias: float = flaps_aoa_bias if flaps_deployed else 0
+	var flap_lift: float = flaps_lift_power if flaps_deployed else 0.0
+	var flaps_bias: float = flaps_aoa_bias if flaps_deployed else 0.0
 	
 	print(rad_to_deg(aoa + flaps_bias))
 	var lift_force: Vector3 = _calculate_lift(aoa + flaps_bias, Vector3.RIGHT, \
@@ -119,7 +120,7 @@ func _calculate_lift(aoa_value: float, right_axis: Vector3, _lift_power: float, 
 	
 	# list = velocity ^ 2 * coefiicent * lift_power
 	var lift_coefficent: float = curve.sample(rad_to_deg(aoa_value))
-	var lift_force = lift_sqr * lift_coefficent * _lift_power
+	var lift_force: float = lift_sqr * lift_coefficent * _lift_power
 	
 	# lift is perpendicular to velocity
 	var lift_direction: Vector3 = lift_velocity.normalized().cross(right_axis)

@@ -38,21 +38,21 @@ compositor = SubResource("Compositor_lj5n8")
 [node name="Sunset_Squadron_Main_Base" parent="." unique_id=1660169322 instance=ExtResource("1_8aq2u")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.012622833, -0.074502945)
 
-[node name="planeMerged" parent="Sunset_Squadron_Main_Base" index="0" unique_id=416469074]
+[node name="Barracks" parent="Sunset_Squadron_Main_Base" index="0" unique_id=264504108]
 visible = false
 
-[node name="Hanger" parent="Sunset_Squadron_Main_Base" index="1" unique_id=2093810362]
-transform = Transform3D(0.9873378, 0, 0.260229, 0, 1, 0, -0.25120813, 0, 1.022793, 27.501984, 0, 54.890343)
-
-[node name="Runway" parent="Sunset_Squadron_Main_Base" index="2" unique_id=1173497474]
-transform = Transform3D(0.98217905, 0, -0.18794756, 0, 1, 0, 0.18794756, 0, 0.98217905, -33.748642, -1.9099143, -21.905783)
-
-[node name="Floor" parent="Sunset_Squadron_Main_Base" index="3" unique_id=1791858260]
+[node name="Floor" parent="Sunset_Squadron_Main_Base" index="1" unique_id=167355336]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.049999997, 0)
 surface_material_override/0 = ExtResource("2_lj5n8")
 
-[node name="Barracks" parent="Sunset_Squadron_Main_Base" index="4" unique_id=1534394332]
+[node name="Hanger" parent="Sunset_Squadron_Main_Base" index="2" unique_id=1684294118]
+transform = Transform3D(0.9873378, 0, 0.260229, 0, 1, 0, -0.25120813, 0, 1.022793, 27.501984, 0, 54.890343)
+
+[node name="planeMerged" parent="Sunset_Squadron_Main_Base" index="3" unique_id=2014577228]
 visible = false
+
+[node name="Runway" parent="Sunset_Squadron_Main_Base" index="4" unique_id=436077295]
+transform = Transform3D(0.98217905, 0, -0.18794756, 0, 1, 0, 0.18794756, 0, 0.98217905, -33.748642, -1.9099143, -21.905783)
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Sunset_Squadron_Main_Base" unique_id=1664032076]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.4, 0)

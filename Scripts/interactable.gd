@@ -6,7 +6,7 @@ signal interacted_with(player: Player)
 
 # This scans the top layer of the parents children for an interact node
 # then if found, interacts
-static func Try_Interact(parent: Node, player: Player):
+static func Try_Interact(parent: Node, player: Player) -> void:
 	for child in parent.get_children():
 		if child is Interactable:
 			(child as Interactable).interact(player)

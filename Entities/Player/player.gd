@@ -32,7 +32,7 @@ func _ready() -> void:
 
 func _unhandled_input(event: InputEvent) -> void:
 	if event is InputEventMouseMotion:
-		look_dir = event.relative * 0.001
+		look_dir = (event as InputEventMouseMotion).relative * 0.001
 		if mouse_captured: _rotate_camera()
 	if Input.is_action_just_pressed(&"exit"): 
 		get_tree().quit()
@@ -49,8 +49,9 @@ func _unhandled_input(event: InputEvent) -> void:
 		query.collide_with_areas = true
 
 		var result: Dictionary = space_state.intersect_ray(query)
-		if result.has("collider"):
-			Interactable.Try_Interact(result.collider, self)
+		if result.has("collider") and result.collider is Node:
+			var parent: Node = result.collider
+			Interactable.Try_Interact(parent, self)
 
 func _physics_process(delta: float) -> void:
 	if not is_seated:
