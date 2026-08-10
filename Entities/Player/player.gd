@@ -28,17 +28,26 @@ var is_seated: bool = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	#_capture_mouse()
-	pass
+	_capture_mouse()
 
 func _unhandled_input(event: InputEvent) -> void:
 	if event is InputEventMouseMotion:
 		look_dir = (event as InputEventMouseMotion).relative * 0.001
-		if mouse_captured: _rotate_camera()
+		if mouse_captured: 
+			_rotate_camera()
+	if event is InputEventMouseButton and (event as InputEventMouseButton).pressed:
+		if (event as InputEventMouseButton).button_index == MOUSE_BUTTON_LEFT:
+			if not mouse_captured:
+				_capture_mouse()
 	if Input.is_action_just_pressed(&"exit"): 
-		get_tree().quit()
+		if mouse_captured:
+			mouse_captured = false
+			Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+		else:
+			get_tree().quit()
 	if Input.is_action_just_pressed(&"toggle_camera"): 
 		is_first_person = !is_first_person
+		
 	if Input.is_action_just_pressed(&"interact") and not is_seated:
 		var space_state: PhysicsDirectSpaceState3D = get_world_3d().direct_space_state
 		var mousepos: Vector2 = get_viewport().get_mouse_position()
@@ -68,8 +77,10 @@ func set_camera(camera: Camera3D) -> void:
 	camera_root = camera
 
 func seat_player() -> void:
-	is_first_person = false
 	is_seated = true
+
+func unseat_player() -> void:
+	is_seated = false
 
 # PRIVATE SUPPORT FUNCTIONS
 
