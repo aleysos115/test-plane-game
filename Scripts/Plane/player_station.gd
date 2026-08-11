@@ -1,4 +1,4 @@
-class_name player_station extends Node3D
+class_name Player_Station extends Node3D
 
 @export var player_lock: RemoteTransform3D
 

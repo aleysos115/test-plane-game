@@ -2,6 +2,7 @@
 class_name aircraft_base extends RigidBody3D
 
 @export var interactable: Interactable
+@export var pilot_seat: Player_Station
 
 @export var mass_center: Vector3 = Vector3.ZERO:
 	set(value):
@@ -25,4 +26,4 @@ func _process(delta: float) -> void:
 	pass
 	
 func _on_interacted_with(player: Player) -> void:
-	pass
+	pilot_seat.seat_player(player)

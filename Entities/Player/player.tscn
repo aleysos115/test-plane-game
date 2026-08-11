@@ -3,9 +3,10 @@
 [ext_resource type="Script" uid="uid://b558h0dmmgiai" path="res://Entities/Player/player.gd" id="1_mv1ah"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_5hio4"]
-height = 1.9956055
+height = 1.75
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_ix6vc"]
+height = 1.75
 
 [node name="Player" type="CharacterBody3D" unique_id=1171736633 node_paths=PackedStringArray("first_person_camera_point", "third_person_camera_point")]
 collision_layer = 2
@@ -22,7 +23,7 @@ mesh = SubResource("CapsuleMesh_5hio4")
 shape = SubResource("CapsuleShape3D_ix6vc")
 
 [node name="FirstPersonCameraPoint" type="Node3D" parent="." unique_id=154092004]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.92171836, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6558652, 0)
 
 [node name="ThirdPersonCameraPoint" type="Node3D" parent="." unique_id=1369177689]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, -5)
