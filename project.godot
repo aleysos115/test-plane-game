@@ -17,9 +17,6 @@ config/icon="res://icon.svg"
 
 [debug]
 
-gdscript/warnings/directory_rules={
-"res://addons": 1
-}
 gdscript/warnings/incompatible_ternary=2
 gdscript/warnings/untyped_declaration=2
 gdscript/warnings/inferred_declaration=1
@@ -39,7 +36,7 @@ window/stretch/aspect="expand"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/gizmos/plugin.cfg")
+enabled=PackedStringArray()
 
 [input]
 
