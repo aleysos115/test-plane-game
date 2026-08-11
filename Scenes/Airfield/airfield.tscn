@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://bcqiqjd42aaro" path="res://Assets/Barracks/BarraksBuildingBomberGame.fbx" id="4_8iu42"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_8aq2u"]
+sky_top_color = Color(0.1425, 0.426, 0.75, 1)
 
 [sub_resource type="Sky" id="Sky_236rp"]
 sky_material = SubResource("ProceduralSkyMaterial_8aq2u")
@@ -20,9 +21,6 @@ reflected_light_source = 2
 [sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_8iu42"]
 
 [sub_resource type="Compositor" id="Compositor_lj5n8"]
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_pk3r5"]
-size = Vector3(1816.773, 20, 3548.028)
 
 [node name="Airfield" type="Node3D" unique_id=484084949]
 
@@ -38,35 +36,28 @@ compositor = SubResource("Compositor_lj5n8")
 [node name="Sunset_Squadron_Main_Base" parent="." unique_id=1660169322 instance=ExtResource("1_8aq2u")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.012622833, -0.074502945)
 
-[node name="Barracks" parent="Sunset_Squadron_Main_Base" index="0" unique_id=264504108]
+[node name="planeMerged" parent="Sunset_Squadron_Main_Base" index="0" unique_id=416469074]
 visible = false
 
-[node name="Floor" parent="Sunset_Squadron_Main_Base" index="1" unique_id=167355336]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.049999997, 0)
-surface_material_override/0 = ExtResource("2_lj5n8")
-
-[node name="Hanger" parent="Sunset_Squadron_Main_Base" index="2" unique_id=1684294118]
+[node name="Hanger" parent="Sunset_Squadron_Main_Base" index="1" unique_id=2093810362]
 transform = Transform3D(0.9873378, 0, 0.260229, 0, 1, 0, -0.25120813, 0, 1.022793, 27.501984, 0, 54.890343)
 
-[node name="planeMerged" parent="Sunset_Squadron_Main_Base" index="3" unique_id=2014577228]
-visible = false
-
-[node name="Runway" parent="Sunset_Squadron_Main_Base" index="4" unique_id=436077295]
+[node name="Runway" parent="Sunset_Squadron_Main_Base" index="2" unique_id=1173497474]
 transform = Transform3D(0.98217905, 0, -0.18794756, 0, 1, 0, 0.18794756, 0, 0.98217905, -33.748642, -1.9099143, -21.905783)
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Sunset_Squadron_Main_Base" unique_id=1664032076]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.4, 0)
-collision_layer = 4294967295
+[node name="Floor" parent="Sunset_Squadron_Main_Base" index="3" unique_id=1791858260]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.049999997, 0)
+visible = false
+surface_material_override/0 = ExtResource("2_lj5n8")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Sunset_Squadron_Main_Base/StaticBody3D" unique_id=625331637]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -9.845067, 0)
-shape = SubResource("BoxShape3D_pk3r5")
+[node name="Barracks" parent="Sunset_Squadron_Main_Base" index="4" unique_id=1534394332]
+visible = false
 
 [node name="PlayerSpawn" type="Node3D" parent="." unique_id=488450523]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.832344, 2.247841, -24.254772)
 
 [node name="Bomber" parent="." unique_id=697313501 instance=ExtResource("2_wqk30")]
-transform = Transform3D(-0.48253366, 0.24579164, -1.9252917, 0, 1.9838982, 0.25327373, 1.9409178, 0.061106533, -0.47864887, 7.040821, 4.8461275, 48.56057)
+transform = Transform3D(-0.48253366, 0.24579164, -1.9252917, 0, 1.9838982, 0.25327373, 1.9409178, 0.061106533, -0.47864887, 7.040821, 10.256833, 48.56057)
 center_of_mass = Vector3(0, 0, 0)
 mass_center = Vector3(0, 0, 0)
 

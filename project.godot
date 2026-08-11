@@ -15,6 +15,10 @@ run/main_scene="uid://clvx3p2om3ntw"
 config/features=PackedStringArray("4.7", "Forward Plus")
 config/icon="res://icon.svg"
 
+[autoload]
+
+TerrainManager="*uid://lhoxqff0sb6n"
+
 [debug]
 
 gdscript/warnings/incompatible_ternary=2
@@ -36,7 +40,7 @@ window/stretch/aspect="expand"
 
 [editor_plugins]
 
-enabled=PackedStringArray()
+enabled=PackedStringArray("res://addons/terrain_3d/plugin.cfg")
 
 [input]
 

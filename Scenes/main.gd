@@ -8,6 +8,7 @@ extends Node
 
 @export var target_scene: PackedScene
 @export var player_scene: PackedScene
+@export var terrain_scene: PackedScene
 
 var player: Player
 
@@ -33,3 +34,12 @@ func load_level(target: PackedScene) -> void:
 		if spawn_point:
 			player.global_position = spawn_point.global_position
 		player.set_camera(main_camera)
+	
+	load_terrain_scene(terrain_scene)
+
+func load_terrain_scene(target: PackedScene) -> void:
+	if target:
+		var terrain_scene_instance: Node = target.instantiate()
+		level_root.add_child(terrain_scene_instance)
+	else:
+		push_warning("No scene assigned to terrain_scene variable!")
