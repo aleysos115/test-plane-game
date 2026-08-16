@@ -1,9 +1,9 @@
 [gd_scene format=3 uid="uid://clvx3p2om3ntw"]
 
-[ext_resource type="Script" uid="uid://8qtaqti2tiw2" path="res://Scenes/main.gd" id="1_jjgbg"]
-[ext_resource type="PackedScene" uid="uid://r0gdr3jxw4cx" path="res://Scenes/Airfield/airfield.tscn" id="2_8gbba"]
-[ext_resource type="PackedScene" uid="uid://d0f0vm8vos6yr" path="res://Entities/Player/player.tscn" id="3_8gbba"]
-[ext_resource type="PackedScene" uid="uid://cf7vaydn7udlc" path="res://Scenes/Terrain/TerrainEditor.tscn" id="4_jjvhh"]
+[ext_resource type="Script" uid="uid://8qtaqti2tiw2" path="res://Scripts/main.gd" id="1_jjgbg"]
+[ext_resource type="PackedScene" uid="uid://dlmww6ttqpoh2" path="res://Scenes/level.tscn" id="2_jjvhh"]
+[ext_resource type="PackedScene" uid="uid://d0f0vm8vos6yr" path="res://Scenes/Entities/Player/player.tscn" id="3_8gbba"]
+[ext_resource type="PackedScene" uid="uid://cf7vaydn7udlc" path="res://Scenes/Terrain/terrain.tscn" id="4_jjvhh"]
 
 [node name="Main" type="Node" unique_id=102131798 node_paths=PackedStringArray("main_camera", "level_root", "entity_root", "effect_root")]
 script = ExtResource("1_jjgbg")
@@ -11,7 +11,7 @@ main_camera = NodePath("Systems/Camera3D")
 level_root = NodePath("World/Level")
 entity_root = NodePath("World/Entities")
 effect_root = NodePath("World/Effects")
-target_scene = ExtResource("2_8gbba")
+target_scene = ExtResource("2_jjvhh")
 player_scene = ExtResource("3_8gbba")
 terrain_scene = ExtResource("4_jjvhh")
 

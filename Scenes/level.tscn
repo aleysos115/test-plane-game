@@ -1,0 +1,53 @@
+[gd_scene format=3 uid="uid://dlmww6ttqpoh2"]
+
+[ext_resource type="PackedScene" uid="uid://dm6vdfy5pg4hy" path="res://Scenes/Airfield/barraks.tscn" id="1_6phgx"]
+[ext_resource type="PackedScene" uid="uid://nk6jopxnwm2t" path="res://Scenes/Airfield/hanger.tscn" id="2_81xng"]
+[ext_resource type="PackedScene" uid="uid://ckqmcviob4p4r" path="res://Scenes/Airfield/runway.tscn" id="3_wqkje"]
+[ext_resource type="PackedScene" uid="uid://duqvqi7bcjk6v" path="res://Scenes/Entities/Bomber/bomber.tscn" id="4_81xng"]
+[ext_resource type="PackedScene" uid="uid://cf7vaydn7udlc" path="res://Scenes/Terrain/terrain.tscn" id="4_wqkje"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_4hvuo"]
+
+[sub_resource type="Sky" id="Sky_236rp"]
+sky_material = SubResource("ProceduralSkyMaterial_4hvuo")
+
+[sub_resource type="Environment" id="Environment_lgns8"]
+background_mode = 2
+sky = SubResource("Sky_236rp")
+ambient_light_source = 3
+reflected_light_source = 2
+
+[sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_5hio4"]
+
+[sub_resource type="Compositor" id="Compositor_5qthr"]
+
+[node name="Level" type="Node3D" unique_id=1452233346]
+
+[node name="Sun" type="DirectionalLight3D" parent="." unique_id=1186919908]
+transform = Transform3D(1, 0, 0, 0, 0.96316254, 0.26891983, 0, -0.26891983, 0.96316254, 0, 0, 0)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=205032529]
+environment = SubResource("Environment_lgns8")
+camera_attributes = SubResource("CameraAttributesPractical_5hio4")
+compositor = SubResource("Compositor_5qthr")
+
+[node name="PlayerSpawn" type="Node3D" parent="." unique_id=994354051]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.292, 2, 0)
+
+[node name="Environment" type="Node3D" parent="." unique_id=998992946]
+
+[node name="BarraksBuildingBomberGame" parent="Environment" unique_id=202022740 instance=ExtResource("1_6phgx")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 2.9003067, 0, -48.52574)
+
+[node name="Hanger" parent="Environment" unique_id=1654503772 instance=ExtResource("2_81xng")]
+transform = Transform3D(0.8823016, 0, 0.52768946, 0, 1, 0, -0.5093971, 0, 0.91398495, 68.46579, 0, 30.5583)
+
+[node name="Runway" parent="Environment" unique_id=1464614008 instance=ExtResource("3_wqkje")]
+transform = Transform3D(0.98217905, 0, -0.18794756, 0, 1, 0, 0.18794756, 0, 0.98217905, 2.475586, -1.9485502, -17.456718)
+
+[node name="Terrain" parent="Environment" unique_id=475770853 instance=ExtResource("4_wqkje")]
+
+[node name="Bomber" parent="." unique_id=890976216 instance=ExtResource("4_81xng")]
+transform = Transform3D(-8.742278e-08, 0, -2, 0, 2, 0, 2, 0, -8.742278e-08, 56, 11.479475, 30.89706)
+
+[editable path="Environment/Terrain"]

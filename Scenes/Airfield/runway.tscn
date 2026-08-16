@@ -1,0 +1,43 @@
+[gd_scene format=4 uid="uid://ckqmcviob4p4r"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_28ufn"]
+resource_name = "Runway"
+cull_mode = 2
+albedo_color = Color(0.14999516, 0.14999516, 0.14999516, 1)
+roughness = 0.8586207
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_0c4dk"]
+_surfaces = [{
+"aabb": AABB(-22.500015, 0, 0, 45, 2.0646498, 1000),
+"format": 34359742465,
+"index_count": 36,
+"index_data": PackedByteArray("AAABAAIAAQADAAIAAAAEAAEAAgADAAUAAgAFAAAAAAAGAAQAAAAFAAYABAAHAAEAAQAHAAMABAAGAAcABQADAAcABQAHAAYA"),
+"name": "Runway",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 8,
+"vertex_data": PackedByteArray("CAC0wQAAAAAAAHpE+P+zQQAAAAAAAACACAC0wQAAAAAAAACACAC0wTkjBEAAAACA+P+zQQAAAAAAAHpECAC0wTkjBEAAAHpE+P+zQTkjBEAAAHpE+P+zQTkjBEAAAACA")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_b6jb0"]
+resource_name = "Sunset_Squadron_Main_Base_Runway"
+_surfaces = [{
+"aabb": AABB(-22.500015, 0, 0, 45, 2.0646498, 1000),
+"attribute_data": PackedByteArray("AAAAAAAAgD8AAIA/AAAAAAAAAAAAAAAAAACAPwAAgD8AAAAAAACAPwAAgD8AAAAAAACAPwAAgD8AAAAAAAAAAAAAgD8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAgD8AAAAAAAAAAAAAgD8AAIA/AACAPwAAgD8AAIA/AAAAAAAAgD8AAIA/AACAPwAAgD8AAAAAAACAPwAAAAAAAIA/AACAPwAAAAAAAAAAAAAAAAAAgD8AAAAAAACAPwAAAAAAAAAA"),
+"format": 34359742487,
+"index_count": 36,
+"index_data": PackedByteArray("AAABAAIAAAADAAEABAAFAAYABAAHAAUACAAJAAoACAALAAkADAANAA4ADAAPAA0AEAARABIAEAATABEAFAAVABYAFAAXABUA"),
+"material": SubResource("StandardMaterial3D_28ufn"),
+"name": "Runway",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 24,
+"vertex_data": PackedByteArray("CAC0wQAAAAAAAHpE+P+zQQAAAAAAAACACAC0wQAAAAAAAACA+P+zQQAAAAAAAHpECAC0wTkjBEAAAHpE+P+zQTkjBEAAAACA+P+zQTkjBEAAAHpECAC0wTkjBEAAAACA+P+zQQAAAAAAAACACAC0wTkjBEAAAACACAC0wQAAAAAAAACA+P+zQTkjBEAAAACACAC0wQAAAAAAAHpE+P+zQTkjBEAAAHpE+P+zQQAAAAAAAHpECAC0wTkjBEAAAHpE+P+zQQAAAAAAAHpE+P+zQTkjBEAAAACA+P+zQQAAAAAAAACA+P+zQTkjBEAAAHpECAC0wQAAAAAAAACACAC0wTkjBEAAAHpECAC0wQAAAAAAAHpECAC0wTkjBEAAAACA/38AAP///z//fwAA////P/9/AAD///8//38AAP///z//f///////v/9///////+//3///////7//f///////v/////////8//////////z//////////P/////////8//3//f////z//f/9/////P/9//3////8//3//f////z////9/////v////3////+/////f////7////9/////vwAA/3////+/AAD/f////78AAP9/////vwAA/3////+/")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_0c4dk")
+
+[node name="Runway" type="MeshInstance3D" unique_id=1464614008]
+transform = Transform3D(0.98217905, 0, -0.18794756, 0, 1, 0, 0.18794756, 0, 0.98217905, 0, 0, 0)
+mesh = SubResource("ArrayMesh_b6jb0")

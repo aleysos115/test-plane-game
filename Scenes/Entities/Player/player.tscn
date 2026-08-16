@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://d0f0vm8vos6yr"]
+
+[ext_resource type="Script" uid="uid://b558h0dmmgiai" path="res://Scripts/player.gd" id="1_mv1ah"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_5hio4"]
+height = 1.75
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_ix6vc"]
+height = 1.75
+
+[node name="Player" type="CharacterBody3D" unique_id=1171736633 node_paths=PackedStringArray("first_person_camera_point", "third_person_camera_point")]
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("1_mv1ah")
+first_person_camera_point = NodePath("FirstPersonCameraPoint")
+third_person_camera_point = NodePath("ThirdPersonCameraPoint")
+
+[node name="Mesh" type="MeshInstance3D" parent="." unique_id=836280751]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0021972656, 0)
+mesh = SubResource("CapsuleMesh_5hio4")
+
+[node name="Collider" type="CollisionShape3D" parent="." unique_id=925914646]
+shape = SubResource("CapsuleShape3D_ix6vc")
+
+[node name="FirstPersonCameraPoint" type="Node3D" parent="." unique_id=154092004]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6558652, 0)
+
+[node name="ThirdPersonCameraPoint" type="Node3D" parent="." unique_id=1369177689]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, -5)
